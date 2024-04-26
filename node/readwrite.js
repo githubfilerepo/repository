@@ -3,7 +3,7 @@ const readline = require('readline');
 
 const databaseFile = 'database.txt';
 
-// Function to read data from the database file
+//Function to read data from the database file
 function readData() {
     try {
         const data = fs.readFileSync(databaseFile, 'utf8');
@@ -14,7 +14,7 @@ function readData() {
     }
 }
 
-// Function to write data to the database file
+//Function to write data to the database file
 function writeData(input) {
     try {
         fs.appendFileSync(databaseFile, input + '\n');
@@ -24,13 +24,13 @@ function writeData(input) {
     }
 }
 
-// Create readline interface for user input
+//Create readline interface for user input
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// Function to continuously ask user for input
+//Function to continuously ask user for input
 function askForInput() {
     rl.question('Enter data to store in the database (or type "exit" to quit): ', (input) => {
         if (input.toLowerCase() === 'exit') {
@@ -50,5 +50,5 @@ function askForInput() {
     });
 }
 
-// Start asking for input
+//Start asking for input
 askForInput();
